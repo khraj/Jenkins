@@ -51,7 +51,7 @@ pipeline{
 
                 echo "Biography: ${params.BIOGRAPHY}"
 
-                echo "Toggle: ${params.DEPLOY}"
+                echo "Deploy: ${params.DEPLOY}"
 
                 echo "Choice: ${params.CHOICE}"
 
@@ -61,7 +61,7 @@ pipeline{
     
         stage('Deploy') {
             when {
-                expression { $params.DEPLOY == true }
+                expression { "$params.DEPLOY" == "true" }
             }
             // input {
             //     message "Should we continue?"
