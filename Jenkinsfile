@@ -51,7 +51,7 @@ pipeline{
 
                 echo "Biography: ${params.BIOGRAPHY}"
 
-                echo "Toggle: ${params.TOGGLE}"
+                echo "Toggle: ${params.DEPLOY}"
 
                 echo "Choice: ${params.CHOICE}"
 
@@ -63,14 +63,14 @@ pipeline{
             when {
                 expression { "$params.DEPLOY" }
             }
-            input {
-                message "Should we continue?"
-                ok "Yes, we should."
-                submitter "alice,bob"
-                parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                }
-            }
+            // input {
+            //     message "Should we continue?"
+            //     ok "Yes, we should."
+            //     submitter "alice,bob"
+            //     parameters {
+            //         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+            //     }
+            // }
             steps {
                 echo "hello $PERSON Nice to meet you...!!"
             }
