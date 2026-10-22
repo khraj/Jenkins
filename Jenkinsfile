@@ -4,6 +4,9 @@ pipeline{
             label 'agent-1'
         }
     }
+    options {
+        timeout(time: 10, unit: 'SECONDS')
+    }
     environment {
         COURSE = 'Jenkins'
     }
@@ -21,6 +24,7 @@ pipeline{
                         echo "Testing..."
                         echo "course = $COURSE"
                         env
+                        sleep 10
 
                     """
                 }
