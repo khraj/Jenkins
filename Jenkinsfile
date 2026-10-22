@@ -17,7 +17,7 @@ pipeline{
             steps {
                 echo 'Testing...'
                 echo "course = $COURSE"
-                env
+                echo "$env"
             }
         }
         stage('Deploy') {
