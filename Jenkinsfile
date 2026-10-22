@@ -69,7 +69,7 @@ pipeline{
                 }
             }
             steps {
-                echo 'hello ${PERSON} Nice to meet you...!!'
+                echo "hello $PERSON Nice to meet you...!!"
             }
         }
     }
