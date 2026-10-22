@@ -15,9 +15,16 @@ pipeline{
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                echo "course = $COURSE"
-                echo "$env"
+                script {
+                    sh """
+
+                        echo "Testing..."
+                        echo "course = $COURSE"
+                        env
+
+                    """
+                }
+                
             }
         }
         stage('Deploy') {
