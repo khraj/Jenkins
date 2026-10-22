@@ -24,6 +24,13 @@ pipeline{
     post {
         always {
             echo "Cleaning up..."
+            sh "rm -rf /home/ec2-user/jenkins/workspace/myproject/*"
+        }
+        success {
+            echo "Build succeeded!"
+        }
+        failure {
+            echo "Build failed!"
         }
     }
 }
