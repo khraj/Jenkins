@@ -69,7 +69,7 @@ pipeline{
                 }
             }
             steps {
-                echo 'Deploying...'
+                echo 'hello ${params.PERSON} Nice to meet you...!!'
             }
         }
     }
